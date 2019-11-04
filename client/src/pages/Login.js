@@ -11,7 +11,7 @@ class Login extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
 
-    this.Auth.login(this.state.city, this.state.state, this.state.zipcode)
+    this.Auth.login(this.state.username,this.state.email,this.state.city, this.state.state, this.state.zipcode)
       .then(res => {
         // once user is logged in
         // take them to their profile page
@@ -37,8 +37,18 @@ class Login extends Component {
       <div className="container">
         <h1>Login</h1>
         <form onSubmit={this.handleFormSubmit}>
-          {/* <div className="form-group">
-            <label htmlFor="email">Email address:</label>
+        <div className="form-group">
+            <label htmlFor="username">Username:</label>
+            <input className="form-control"
+                   placeholder="Username goes here..."
+                   name="username"
+                   type="text"
+                   id="username"
+                   autoComplete="username"
+                   onChange={this.handleChange}/>
+          </div> 
+           <div className="form-group">
+            <label htmlFor="email">Email:</label>
             <input className="form-control"
                    placeholder="Email goes here..."
                    name="email"
@@ -46,8 +56,9 @@ class Login extends Component {
                    id="email"
                    autoComplete="email"
                    onChange={this.handleChange}/>
-          </div> */}
-          {/* <div className="form-group">
+          </div> 
+
+           {/* <div className="form-group">
             <label htmlFor="pwd">Password:</label>
             <input className="form-control"
                    placeholder="Password goes here..."
@@ -56,7 +67,7 @@ class Login extends Component {
                    id="pwd"
                    autoComplete="current-password"
                    onChange={this.handleChange}/>
-          </div> */}
+          </div>  */}
           <div className="form-group">
             <label htmlFor="pwd">City:</label>
             <input className="form-control"

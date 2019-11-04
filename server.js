@@ -1,9 +1,9 @@
 require('dotenv').config()
 const express = require('express');
 const app = express();
-const path = require('path');
+//const path = require('path');
 const mongoose = require('mongoose');
-const morgan = require('morgan'); // used to see requests
+//const morgan = require('morgan'); // used to see requests
 const db = require('./models');
 const PORT = process.env.PORT || 3001;
 
@@ -45,7 +45,13 @@ app.post('/api/signup', (req, res) => {
     .then(data => res.json(data))
     .catch(err => res.status(400).json(err));
 });
-
+app.get('/dataentry', (req,res)=>{
+  res.sendFile("public/dataentry.html")
+})
+app.post('/addExercise', (req,res)=>{
+  console.log("we're geting something",req.body)
+  db.Exercise.create(req.body).then(data=>res.json(data))
+})
 // Any route with isAuthenticated is protected and you need a valid token
 // to access
 app.get('/api/user/:id', isAuthenticated, (req, res) => {

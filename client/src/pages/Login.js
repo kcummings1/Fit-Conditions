@@ -1,6 +1,14 @@
 import React, {Component} from 'react';
-import AuthService from './../components/AuthService';
+import AuthService from '../components/AuthService';
 import {Link, Redirect} from 'react-router-dom';
+import Background from "./img/Login.jpeg";
+
+const divStyle = {
+  color: "white",
+  backgroundImage: "url(" + Background + ")"
+};
+
+
 
 class Login extends Component {
   constructor() {

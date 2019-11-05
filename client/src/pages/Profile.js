@@ -24,13 +24,6 @@ const divStyle = {
 const API_KEY = "78e5a71d348673c855d828aecf39b08b";
 class Profile extends Component {
   state = {
-<<<<<<< HEAD
-    // username: "",
-    // email: "",
-    city: "",
-    state: "",
-    zipcode: "",
-=======
     username: "",
     email: "",
     temperature: undefined,
@@ -39,7 +32,6 @@ class Profile extends Component {
     humidity: undefined,
     description: undefined,
     error: undefined
->>>>>>> 5e57e5dd6af581e507659e3ff70857254ab02aa8
   };
 
   getWeather = async e => {
@@ -52,29 +44,6 @@ class Profile extends Component {
     const data = await api_call.json();
     if (city && country) {
       this.setState({
-<<<<<<< HEAD
-        // username: res.data.username,
-        // email: res.data.email,
-        city: res.data.city,
-        state: res.data.state,
-        zipcode: res.data.zipcode
-      })
-    });
-  }
-
-  render() {
-    return (
-      <div className="container Profile">
-        <h1>On the profile page!</h1>
-        {/* <p>Username: {this.state.username}</p>
-        <p>Email: {this.state.email}</p> */}
-        <p>City: {this.state.city}</p>
-        <p>State: {this.state.state}</p>
-        <p>Zipcode: {this.state.zipcode}</p>
-        <Link to="/">Go home</Link>
-      </div>
-    )
-=======
         temperature: data.main.temp,
         city: data.name,
         country: data.sys.country,
@@ -227,7 +196,6 @@ class Profile extends Component {
         <br />
       </section>
     );
->>>>>>> 5e57e5dd6af581e507659e3ff70857254ab02aa8
   }
 }
 

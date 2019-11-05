@@ -41,7 +41,6 @@ class Signup extends Component {
       <div className="sign-up-page">
         <div className="container">
         <h1>Signup</h1>
-<<<<<<< HEAD
         <form onSubmit={this.handleFormSubmit}>
           <div className="form-group">
             <label htmlFor="username">Username:</label>
@@ -53,20 +52,8 @@ class Signup extends Component {
                    autoComplete="username"
                    onChange={this.handleChange}/>
           </div> 
-=======
-          <form onSubmit={this.handleFormSubmit}>
-            <div className="form-group">
-              <label htmlFor="username">Username:</label>
-              <input className="form-control"
-                    placeholder="Username goes here..."
-                    name="username"
-                    type="text"
-                    id="username"
-                    autoComplete="username"
-                    onChange={this.handleChange}/>
-            </div>
           
->>>>>>> 5e57e5dd6af581e507659e3ff70857254ab02aa8
+          
           <div className="form-group">
             <label htmlFor="email">Email:</label>
             <input className="form-control"

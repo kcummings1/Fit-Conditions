@@ -18,9 +18,20 @@ const UserSchema = new Schema({
       unique: true
     }
   },
-  password: {
+  city: {
     type: String,
-    required: true
+    trim: true,
+    required: "City is Required"
+  },
+  state: {
+    type: String,
+    trim: true,
+    required: "State is Required"
+  },
+  zipcode: {
+    type: String,
+    trim: true,
+    required: "Zipcode is Required"
   },
   createdAt: {
     type: Date,

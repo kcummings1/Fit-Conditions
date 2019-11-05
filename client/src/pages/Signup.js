@@ -14,13 +14,25 @@ class Signup extends Component {
     this.Auth = new AuthService();
   }
 
+  componentWillMount() {
+    if (this.Auth.loggedIn()) {
+      this.props.history.replace("/profile")
+    }
+  }
+
   handleFormSubmit = event => {
     event.preventDefault();
     API.signUpUser(this.state.username, this.state.email, this.state.password)
       .then(res => {
         // once the user has signed up
-        // send them to the login page
-        this.props.history.replace('/login');
+        // log them in and take them to their profile page
+        this.Auth.login(this.state.email, this.state.password)
+          .then(res => {
+            window.location.reload();
+          })
+          .catch(err => {
+            alert(err.response.data.message)
+          });
       })
       .catch(err => alert(err));
   };
@@ -33,14 +45,11 @@ class Signup extends Component {
   };
 
   render() {
-    // go to home page after signup
-    if (this.Auth.loggedIn()) {
-      return <Redirect to="/" />
-    }
+    
     return (
       <div className="sign-up-page">
         <div className="container">
-        <h1>Signup</h1>
+        <h1>Sign Up</h1>
           <form onSubmit={this.handleFormSubmit}>
             <div className="form-group">
               <label htmlFor="username">Username:</label>

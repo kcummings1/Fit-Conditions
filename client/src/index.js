@@ -16,7 +16,7 @@ import axios from "axios";
 import Login from "./pages/login";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
-import Index from "./pages/index";
+import Home from "./pages/Home";
 //import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/footer";
@@ -39,7 +39,7 @@ ReactDOM.render(
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/profile" component={Profile} />
-      <Route exact path="/index" component={Index} />
+      <Route exact path="/" component={Home} />
 
       <Footer />
     </div>

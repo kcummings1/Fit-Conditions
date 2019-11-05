@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import {Link, Redirect} from 'react-router-dom';
+//import {Link, Redirect} from 'react-router-dom';
 import AuthService from './../components/AuthService';
 import API from './../utils/API';
-// import Background from "./img/signUp.jpg";
 import "./signup.css";
 
 

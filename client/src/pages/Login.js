@@ -14,6 +14,12 @@ class Login extends Component {
     this.Auth = new AuthService();
   }
 
+  componentWillMount() {
+    if (this.Auth.loggedIn()) {
+      this.props.history.replace("/profile")
+    }
+  }
+
   handleFormSubmit = event => {
     event.preventDefault();
 
@@ -21,7 +27,7 @@ class Login extends Component {
       .then(res => {
         // once user is logged in
         // take them to their profile page
-        this.props.history.replace(`/profile`);
+        window.location.reload();
       })
       .catch(err => {
         alert(err.response.data.message)

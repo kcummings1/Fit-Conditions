@@ -6,6 +6,7 @@ export default {
   },
   // sign up a user to our service
   signUpUser: (username, email, password) => {
+    console.log('API route triggered');
     return axios.post('api/signup', {username: username, email: email, password: password});
   }
 };

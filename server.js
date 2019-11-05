@@ -41,10 +41,13 @@ app.post('/api/login', (req, res) => {
 
 // SIGNUP ROUTE
 app.post('/api/signup', (req, res) => {
+  console.log('Pinged API sign up route');
   db.User.create(req.body)
     .then(data => res.json(data))
     .catch(err => res.status(400).json(err));
 });
+
+
 app.get('/dataentry', (req,res)=>{
   res.sendFile("public/dataentry.html")
 })

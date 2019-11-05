@@ -5,7 +5,7 @@ export default {
     return axios.get(`/api/user/${id}`);
   },
   // sign up a user to our service
-  signUpUser: (city, state, zipcode) => {
-    return axios.post('api/signup', {city: city, state: state, zipcode: zipcode});
+  signUpUser: (password, username, email, city, state, zipcode) => {
+    return axios.post('api/signup', {username: username, email: email, password: password, city: city, state: state, zipcode: zipcode});
   }
 };

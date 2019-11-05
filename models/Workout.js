@@ -10,6 +10,7 @@ const workoutSchema = new Schema({
     exercises: [
         {
             typre: Schema.Types.ObjectId,
+            // something wrong here
             ref: "Exercise",
             reps: Number,
             sets: Number

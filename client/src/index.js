@@ -13,7 +13,7 @@ import { Route, BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
 
 // Our Components
-import Login from "./pages/Login";
+import Login from "./pages/login";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Index from "./pages/index";

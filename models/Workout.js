@@ -9,10 +9,12 @@ const workoutSchema = new Schema({
     },
     exercises: [
         {
-            typre: Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,
+            // issue here 
             ref: "Exercise",
-            reps: Number,
-            sets: Number
+            // ----- 
+            // reps: Number,
+            // sets: Number
         }
     ]
 })

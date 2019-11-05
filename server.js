@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 //const path = require('path');
 const mongoose = require('mongoose');
-//const morgan = require('morgan'); // used to see requests
+const morgan = require('morgan'); // used to see requests
 const db = require('./models');
 const PORT = process.env.PORT || 3001;
 

@@ -9,7 +9,7 @@ const divStyle = {
   backgroundImage: "url(" + Background + ")"
 };
 
-class Index extends Component {
+class Home extends Component {
   componentDidMount() {}
 
   render() {
@@ -106,4 +106,4 @@ class Index extends Component {
   }
 }
 
-export default Index;
+export default Home;

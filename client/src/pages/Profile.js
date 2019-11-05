@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
-import Moment from "react-moment";
 
 import withAuth from "./../components/withAuth";
 import API from "./../utils/API";
@@ -11,10 +10,6 @@ import outdoor from "./img/outdoor.jpeg";
 import indoor from "./img/indoor.jpeg";
 import Weather from "./../components/Weather";
 import Form from "./../components/Form";
-
-import { GenericWeather } from "react-weather";
-import ReactWeather from "react-open-weather";
-import "react-open-weather/lib/css/ReactWeather.css";
 
 const divStyle = {
   color: "white",
@@ -39,7 +34,7 @@ class Profile extends Component {
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
     const api_call = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`
+      `http://api.openweathermap.org/data/2.5/weather?q=${city},${country || "USA"}&appid=${API_KEY}&units=metric`
     );
     const data = await api_call.json();
     if (city && country) {

@@ -1,12 +1,9 @@
-import React, {Component} from 'react';
-import {Link, Redirect} from 'react-router-dom';
-import AuthService from './../components/AuthService';
-import API from './../utils/API';
+import React, { Component } from "react";
+import { Link, Redirect } from "react-router-dom";
+import AuthService from "./../components/AuthService";
+import API from "./../utils/API";
 // import Background from "./img/signUp.jpg";
 import "./signup.css";
-
-
-
 
 class Signup extends Component {
   constructor() {
@@ -16,17 +13,24 @@ class Signup extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.signUpUser(this.state.password, this.state.username,this.state.email,this.state.city, this.state.state, this.state.zipcode)
+    API.signUpUser(
+      this.state.password,
+      this.state.username,
+      this.state.email,
+      this.state.city,
+      this.state.state,
+      this.state.zipcode
+    )
       .then(res => {
         // once the user has signed up
         // send them to the login page
-        this.props.history.replace('/login');
+        this.props.history.replace("/login");
       })
       .catch(err => alert(err));
   };
 
   handleChange = event => {
-    const {name, value} = event.target;
+    const { name, value } = event.target;
     this.setState({
       [name]: value
     });
@@ -35,36 +39,39 @@ class Signup extends Component {
   render() {
     // go to home page after signup
     if (this.Auth.loggedIn()) {
-      return <Redirect to="/" />
+      return <Redirect to="/" />;
     }
     return (
       <div className="sign-up-page">
         <div className="container">
-        <h1>Signup</h1>
-        <form onSubmit={this.handleFormSubmit}>
-          <div className="form-group">
-            <label htmlFor="username">Username:</label>
-            <input className="form-control"
-                   placeholder="Username goes here..."
-                   name="username"
-                   type="text"
-                   id="username"
-                   autoComplete="username"
-                   onChange={this.handleChange}/>
-          </div> 
-          
-          
-          <div className="form-group">
-            <label htmlFor="email">Email:</label>
-            <input className="form-control"
-                   placeholder="Email goes here..."
-                   name="email"
-                   type="email"
-                   id="email"
-                   autoComplete="email"
-                   onChange={this.handleChange}/>
-          </div> 
-          {/* <div className="form-group">
+          <h1>Signup</h1>
+          <form onSubmit={this.handleFormSubmit}>
+            <div className="form-group">
+              <label htmlFor="username">Username:</label>
+              <input
+                className="form-control"
+                placeholder="Username goes here..."
+                name="username"
+                type="text"
+                id="username"
+                autoComplete="username"
+                onChange={this.handleChange}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="email">Email:</label>
+              <input
+                className="form-control"
+                placeholder="Email goes here..."
+                name="email"
+                type="email"
+                id="email"
+                autoComplete="email"
+                onChange={this.handleChange}
+              />
+            </div>
+             <div className="form-group">
             <label htmlFor="pwd">Password:</label>
             <input className="form-control"
                    placeholder="Password goes here..."
@@ -73,49 +80,54 @@ class Signup extends Component {
                    id="pwd"
                    autoComplete="new-password"
                    onChange={this.handleChange}/>
-          </div> */}
-          <div className="form-group">
-            <label htmlFor="pwd">City:</label>
-            <input className="form-control"
-                   placeholder="City goes here..."
-                   name="city"
-                   type="city"
-                   id="cty"
-                   autoComplete="current-city"
-                   onChange={this.handleChange}/>
-          </div>
-          <div className="form-group">
-            <label htmlFor="pwd">State:</label>
-            <input className="form-control"
-                   placeholder="State goes here..."
-                   name="state"
-                   type="state"
-                   id="zpc"
-                   autoComplete="current-state"
-                   onChange={this.handleChange}/>
-          </div>
-          <div className="form-group">
-            <label htmlFor="pwd">Zipcode:</label>
-            <input className="form-control"
-                   placeholder="Zipcode goes here..."
-                   name="zipcode"
-                   type="zipcode"
-                   id="zpc"
-                   autoComplete="current-zipcode"
-                   onChange={this.handleChange}/>
-          </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
-
-        </form>
-        
+          </div> 
+            <div className="form-group">
+              <label htmlFor="pwd">City:</label>
+              <input
+                className="form-control"
+                placeholder="City goes here..."
+                name="city"
+                type="city"
+                id="cty"
+                autoComplete="current-city"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="pwd">State:</label>
+              <input
+                className="form-control"
+                placeholder="State goes here..."
+                name="state"
+                type="state"
+                id="zpc"
+                autoComplete="current-state"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="pwd">Zipcode:</label>
+              <input
+                className="form-control"
+                placeholder="Zipcode goes here..."
+                name="zipcode"
+                type="zipcode"
+                id="zpc"
+                autoComplete="current-zipcode"
+                onChange={this.handleChange}
+              />
+            </div>
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
-    )
+    );
   }
 }
 
 export default Signup;
-
 
 // $( document ).ready(function() {
 //   $.support.cors = true;

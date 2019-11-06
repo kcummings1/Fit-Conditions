@@ -33,6 +33,11 @@ const UserSchema = new Schema({
     trim: true,
     required: "Zipcode is Required"
   },
+  password: {
+    type: String,
+    trim: true,
+    required: "Password is Required"
+  },
   createdAt: {
     type: Date,
     default: Date.now

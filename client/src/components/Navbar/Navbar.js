@@ -77,7 +77,7 @@ class Navbar extends Component {
     }
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="index">
+        <a className="navbar-brand" href="Home">
           <h1>
             <span>Fit</span>Conditions
           </h1>
@@ -97,7 +97,7 @@ class Navbar extends Component {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto" id="mainNav">
             <li className="nav-item" role="presentation">
-              <a className="nav-link active" href="index">
+              <a className="nav-link active" href="Home">
                 Home
               </a>
             </li>

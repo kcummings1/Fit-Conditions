@@ -1,15 +1,10 @@
 import React from "react";
 import weather from "./../pages/img/weatherbg.png";
-//import weather from "./../pages/img/weather.jpeg";
 
-const divStyle = {
- color: "white",
-  backgroundImage: "url(" + weather + ")",
-};
+
 
 const pStyle = {
-	// color: "white",
-	 //backgroundImage: "url(" + weather + ")",
+	
 	 fontSize: "20px"
    };
 

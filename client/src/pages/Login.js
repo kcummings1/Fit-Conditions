@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
 import AuthService from '../components/AuthService';
 import {Link, Redirect} from 'react-router-dom';
-import Background from "./img/Login.jpeg";
+import "./login.css";
 
-const divStyle = {
-  color: "white",
-  backgroundImage: "url(" + Background + ")"
-};
+
+
 
 
 
@@ -16,6 +14,12 @@ class Login extends Component {
     this.Auth = new AuthService();
   }
 
+  componentWillMount() {
+    if (this.Auth.loggedIn()) {
+      this.props.history.replace("/profile")
+    }
+  }
+
   handleFormSubmit = event => {
     event.preventDefault();
 
@@ -23,7 +27,7 @@ class Login extends Component {
       .then(res => {
         // once user is logged in
         // take them to their profile page
-        this.props.history.replace(`/profile`);
+        window.location.reload();
       })
       .catch(err => {
         alert(err.response.data.message)
@@ -38,10 +42,11 @@ class Login extends Component {
   };
 
   render() {
-    if (this.Auth.loggedIn()) {
-      return <Redirect to="/" />
-    }
+    // if (this.Auth.loggedIn()) {
+    //   return <Redirect to="/profile" />
+    // }
     return (
+      <div className="log-in-page">
       <div className="container">
         <h1>Login</h1>
         <form onSubmit={this.handleFormSubmit}>
@@ -70,9 +75,9 @@ class Login extends Component {
           
           <button type="submit" className="btn btn-primary">Submit</button>
         </form>
-        <p><Link to="/signup">Go to Signup</Link></p>
+        <p><Link to="/Signup">Go to Signup</Link></p>
       </div>
-
+</div>
     );
   }
 }

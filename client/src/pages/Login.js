@@ -19,7 +19,7 @@ class Login extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
 
-    this.Auth.login(this.state.username,this.state.email,this.state.city, this.state.state, this.state.zipcode)
+    this.Auth.login(this.state.email, this.state.password)
       .then(res => {
         // once user is logged in
         // take them to their profile page
@@ -45,16 +45,7 @@ class Login extends Component {
       <div className="container">
         <h1>Login</h1>
         <form onSubmit={this.handleFormSubmit}>
-        <div className="form-group">
-            <label htmlFor="username">Username:</label>
-            <input className="form-control"
-                   placeholder="Username goes here..."
-                   name="username"
-                   type="text"
-                   id="username"
-                   autoComplete="username"
-                   onChange={this.handleChange}/>
-          </div> 
+        
            <div className="form-group">
             <label htmlFor="email">Email:</label>
             <input className="form-control"
@@ -66,7 +57,7 @@ class Login extends Component {
                    onChange={this.handleChange}/>
           </div> 
 
-           {/* <div className="form-group">
+            <div className="form-group">
             <label htmlFor="pwd">Password:</label>
             <input className="form-control"
                    placeholder="Password goes here..."
@@ -75,37 +66,8 @@ class Login extends Component {
                    id="pwd"
                    autoComplete="current-password"
                    onChange={this.handleChange}/>
-          </div>  */}
-          <div className="form-group">
-            <label htmlFor="pwd">City:</label>
-            <input className="form-control"
-                   placeholder="City goes here..."
-                   name="city"
-                   type="city"
-                   id="cty"
-                   autoComplete="current-city"
-                   onChange={this.handleChange}/>
-          </div>
-          <div className="form-group">
-            <label htmlFor="pwd">State:</label>
-            <input className="form-control"
-                   placeholder="State goes here..."
-                   name="state"
-                   type="state"
-                   id="st"
-                   autoComplete="current-state"
-                   onChange={this.handleChange}/>
-          </div>
-          <div className="form-group">
-            <label htmlFor="pwd">Zipcode:</label>
-            <input className="form-control"
-                   placeholder="Zipcode goes here..."
-                   name="zipcode"
-                   type="zipcode"
-                   id="zpc"
-                   autoComplete="current-zipcode"
-                   onChange={this.handleChange}/>
-          </div>
+          </div>  
+          
           <button type="submit" className="btn btn-primary">Submit</button>
         </form>
         <p><Link to="/signup">Go to Signup</Link></p>

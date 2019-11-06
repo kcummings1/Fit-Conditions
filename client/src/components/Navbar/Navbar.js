@@ -50,7 +50,7 @@ class Navbar extends Component {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="signup">
-                Sign In
+                Sign Up
               </a>
             </li>
 
@@ -62,7 +62,7 @@ class Navbar extends Component {
 
             <li className="nav-item">
               <a className="nav-link" href="login">
-                Create Account
+                Log In
               </a>
             </li>
             <li className="nav-item" role="presentation">

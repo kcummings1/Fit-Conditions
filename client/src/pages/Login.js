@@ -42,9 +42,9 @@ class Login extends Component {
   };
 
   render() {
-    if (this.Auth.loggedIn()) {
-      return <Redirect to="/profile" />
-    }
+    // if (this.Auth.loggedIn()) {
+    //   return <Redirect to="/profile" />
+    // }
     return (
       <div className="log-in-page">
       <div className="container">

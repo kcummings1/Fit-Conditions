@@ -41,10 +41,17 @@ app.post('/api/login', (req, res) => {
 
 // SIGNUP ROUTE
 app.post('/api/signup', (req, res) => {
+<<<<<<< HEAD
   console.log('Pinged API sign up route');
+=======
+  console.log(req.body)
+>>>>>>> 4076dde63d3b7539f01dae19183b763b663c45c5
   db.User.create(req.body)
     .then(data => res.json(data))
-    .catch(err => res.status(400).json(err));
+    .catch(err => {
+      console.log(err)
+      res.status(400).json(err.message)
+    });
 });
 
 

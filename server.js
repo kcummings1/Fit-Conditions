@@ -62,9 +62,9 @@ app.post('/api/signup', (req, res) => {
 });
 
 //add routes to Indoor Workouts here
-app.get('/api/indoorworkout', (req, res) => {
+app.get('/api/indoorworkouts', (req, res) => {
    console.log("hello")
-  db.Workout.find().then(data => {
+  db.Workout.find({type: "Indoor Workout"}).then(data => {
     res.json(data);
   });
 });

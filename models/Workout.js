@@ -8,17 +8,26 @@ const WorkoutSchema = new Schema({
         type: Schema.Types.ObjectId
     },
 
-    Type: {
+    type: {
         type: String
     },
 
-    Name: {
+    name: {
         type: String,
         unique: true
     },
 
-    Exercise: {
-        type: Array 
+    exercise: {
+        type: [String],
+        default: []
+    },
+    bilateral: {
+        type: [String],
+        default: []
+    },
+    unilateral: {
+        type: [String],
+        default: []
     }
 }, {
     collection: "Workout"

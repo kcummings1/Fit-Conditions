@@ -21,6 +21,8 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/footer";
 import withAuth from './components/withAuth';
+import Indoor from "./pages/Indoor";
+import Outdoor from "./pages/Outdoor";
 
 // window.jQuery = window.$ = require("jquery/dist/jquery.min.js");
 // require("bootstrap/dist/js/bootstrap.min.js");
@@ -41,7 +43,8 @@ ReactDOM.render(
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/profile" component={withAuth(Profile)} />
       <Route exact path="/home" component={Home} />
-
+      <Route exact path="/indoor" component={Indoor} />
+      <Route exact path="/outdoor" component={Outdoor} />
       <Footer />
     </div>
   </Router>,

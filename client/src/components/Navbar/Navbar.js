@@ -56,7 +56,7 @@ class Navbar extends Component {
               </li>
 
               <li className="nav-item" role="presentation">
-                <a className="nav-link" href="indoorWorkouts.html">
+                <a className="nav-link" href="indoor">
                   Indoor Workouts
                 </a>
               </li>
@@ -134,7 +134,7 @@ class Navbar extends Component {
               </a>
             </li>
             <li className="nav-item" role="presentation">
-              <a className="nav-link" href="indoorWorkouts">
+              <a className="nav-link" href="indoor">
                 Indoor Workouts
               </a>
             </li>

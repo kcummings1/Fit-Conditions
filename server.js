@@ -13,7 +13,7 @@ const auth = require("./config/auth");
 // Setting CORS so that any website can
 // Access our API
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', '*'); 
   res.setHeader('Access-Control-Allow-Headers', 'Content-type,Authorization');
   next();
 });
@@ -25,12 +25,23 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// const mongojs= require("mongojs")
+// var mong = mongojs('FitnessConditionsApp', ["Workouts"])
+
+// mong.Workouts.find({}, (err, found)=>console.log( "mong",found.forEach(element => {
+//  console.log(element)
+// })))
+
 mongoose
-  .connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/appDB', {useNewUrlParser: true, useCreateIndex: true})
-  .then(() => console.log("MongoDB Connected!"))
+  // .connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/FitnessConditionsApp', {useNewUrlParser: true, useCreateIndex: true})
+  .connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/FitnessConditionsApp', { useNewUrlParser: true, useCreateIndex: true })
+  .then((data) => console.log("MongoDB Connected!"))//, data))
   .catch(err => console.error(err));
 
-
+//   db.Workout.find({}).then((database)=>console.log(database))
+//   db.Workout.findOne().lean().exec(function(err, doc) {
+//     console.log(doc);
+// });
 // LOGIN ROUTE
 app.post('/api/login', (req, res) => {
   auth
@@ -49,21 +60,32 @@ app.post('/api/signup', (req, res) => {
       res.status(400).json(err.message)
     });
 });
-app.get('/dataentry', (req,res)=>{
-  res.sendFile("public/dataentry.html")
+
+//add routes to Indoor Workouts here
+app.get('/api/i', (req, res) => {
+   console.log("hello")
+  db.Workout.find().then(data => {
+    res.json(data);
+  })
+});
+
+
+
+//Add routes to Outdoor Workouts here
+app.get('/api/outdoorWorkouts', (req, res) => {
+  console.log(req.body)
+  db.Workout.find(Type.OutdoorWorkout)
 })
-app.post('/addExercise', (req,res)=>{
-  console.log("we're geting something",req.body)
-  db.Exercise.create(req.body).then(data=>res.json(data))
-})
+
+
 // Any route with isAuthenticated is protected and you need a valid token
 // to access
 app.get('/api/user/:id', isAuthenticated, (req, res) => {
   db.User.findById(req.params.id).then(data => {
-    if(data) {
+    if (data) {
       res.json(data);
     } else {
-      res.status(404).send({success: false, message: 'No user found'});
+      res.status(404).send({ success: false, message: 'No user found' });
     }
   }).catch(err => res.status(400).send(err));
 });
@@ -89,10 +111,10 @@ app.use(function (err, req, res, next) {
 
 // Send every request to the React app
 // Define any API routes before this runs
-app.get("*", function(req, res) {
+app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });

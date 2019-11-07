@@ -8,4 +8,7 @@ export default {
   signUpUser: (password, username, email, city, state, zipcode) => {
     return axios.post('api/signup', {username: username, email: email, password: password, city: city, state: state, zipcode: zipcode});
   }
+  // create a route to get indoor workouts
+
+  // create a route to get outdoor workouts
 };

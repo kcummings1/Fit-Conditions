@@ -2,11 +2,12 @@ import React from 'react';
 
 
 function Indoor(){
-    return (
-        <div>
-            hello world
-        </div>
+    render (
+
+        
     )
-}
+}    
+    
+
 
 export default Indoor;

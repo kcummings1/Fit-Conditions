@@ -13,8 +13,8 @@ export default {
     return axios.get(`api/indoorworkouts`);
   },
   // create a route to get outdoor workouts
-  getOutdoorWorkout: (Type) => {
-    return axios.get(`api/outdoorWorkouts, ${Type.OutdoorWorkout}`);
+  getOutdoorWorkout: () => {
+    return axios.get(`api/outdoorworkouts`);
   }
 
 };

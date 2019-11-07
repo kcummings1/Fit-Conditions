@@ -8,16 +8,16 @@ const WorkoutSchema = new Schema({
         type: Schema.Types.ObjectId
     },
 
-    Type: {
+    type: {
         type: String
     },
 
-    Name: {
+    name: {
         type: String,
         unique: true
     },
 
-    Exercise: {
+    exercise: {
         type: Array 
     }
 }, {

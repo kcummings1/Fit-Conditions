@@ -20,15 +20,20 @@ class Indoor extends Component {
     if (this.state.workouts.length === 0) {
       return <div>Loading...</div>;
     }
+
+    const hasBilat = this.state.workouts.filter(workout => workout.bilateral);
+
     return (
       <section className="indoor-content">
         <div>
           <div className="container">
             <div className="row text-center py-5">
-              
 
+                {/* {hasBilat.map(workout => (
+                    workout.name
+                ))} */}
               {this.state.workouts
-                .filter(workout => workout.bilateral)
+                .filter(workout => (workout.bilateral.length > 0))
                 .map(workout => (
                   <div className="col-md-4">
                     <h2>{workout.name}</h2>
@@ -46,16 +51,20 @@ class Indoor extends Component {
                     </ul>
                   </div>
                 ))}
-                {this.state.workouts
-                .filter(workout => !workout.bilateral)
+
+              {this.state.workouts
+                .filter(workout => (workout.bilateral.length === 0))
                 .map(workout => (
                   <div className="col-md-12">
                     <h2>{workout.name}</h2>
-                    <ul>{workout.exercise.map(exer => (
+                    <ul>
+                      {workout.exercise.map(exer => (
                         <li>{exer}</li>
-                    ))}</ul>
+                      ))}
+                    </ul>
                   </div>
                 ))}
+
             </div>
           </div>
         </div>

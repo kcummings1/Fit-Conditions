@@ -30,9 +30,8 @@ class Profile extends Component {
   };
 
   getWeather = async e => {
-    e.preventDefault();
-    const city = e.target.elements.city.value;
-    const country = e.target.elements.country.value;
+    const city = this.state.city;
+    const country = "USA";
     const api_call = await fetch(
       `http://api.openweathermap.org/data/2.5/weather?q=${city},${country || "USA"}&appid=${API_KEY}&units=metric`
     );
@@ -58,14 +57,15 @@ class Profile extends Component {
     }
   };
 
-  // componentDidMount() {
-  //   API.getUser(this.props.user.id).then(res => {
-  //     this.setState({
-  //       username: res.data.username,
-  //       email: res.data.email
-  //     })
-  //   });
-  // }
+  componentDidMount() {
+    API.getUser(this.props.user.id).then(res => {
+      this.setState({
+        city: res.data.city
+      }, () => {
+        this.getWeather()
+      })
+    });
+  }
 
   render() {
     return (
@@ -76,9 +76,6 @@ class Profile extends Component {
           <hr />
           <div className="col-md-8">
             <section name="weather-widget">
-              <div className="row">
-                <Form getWeather={this.getWeather} />
-              </div>
               <div className="row">
                 <Weather
                   temperature={this.state.temperature}

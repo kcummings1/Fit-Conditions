@@ -37,7 +37,10 @@ class Signup extends Component {
   };
 
   render() {
-    
+    // go to home page after signup
+    // if (this.Auth.loggedIn()) {
+    //   return <Redirect to="/" />;
+    // }
     return (
       <div className="sign-up-page">
         <div className="container">

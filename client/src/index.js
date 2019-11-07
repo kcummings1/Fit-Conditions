@@ -13,13 +13,14 @@ import { Route, BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
 
 // Our Components
-import Login from "./pages/login";
+import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 //import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/footer";
+import withAuth from './components/withAuth';
 
 // window.jQuery = window.$ = require("jquery/dist/jquery.min.js");
 // require("bootstrap/dist/js/bootstrap.min.js");
@@ -38,7 +39,7 @@ ReactDOM.render(
       <Navbar />
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
-      <Route exact path="/profile" component={Profile} />
+      <Route exact path="/profile" component={withAuth(Profile)} />
       <Route exact path="/home" component={Home} />
 
       <Footer />

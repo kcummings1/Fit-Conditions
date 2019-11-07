@@ -30,12 +30,12 @@ class Home extends Component {
                           A website that combines weather and fitness
                         </p>
                         {/* read more button */}
-                        <a
+                        {/* <a
                           className="btn-slide animation animated-item-3"
                           href="#"
                         >
                           Read More
-                        </a>
+                        </a> */}
                       </div>
                     </div>
 

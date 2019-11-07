@@ -52,7 +52,7 @@ app.post('/api/login', (req, res) => {
 
 // SIGNUP ROUTE
 app.post('/api/signup', (req, res) => {
-  console.log(req.body)
+  console.log('Pinged API sign up route');
   db.User.create(req.body)
     .then(data => res.json(data))
     .catch(err => {
@@ -61,8 +61,9 @@ app.post('/api/signup', (req, res) => {
     });
 });
 
+<<<<<<< HEAD
 //add routes to Indoor Workouts here
-app.get('/api/i', (req, res) => {
+app.get('/api/indoorworkout', (req, res) => {
    console.log("hello")
   db.Workout.find().then(data => {
     res.json(data);
@@ -75,6 +76,15 @@ app.get('/api/i', (req, res) => {
 app.get('/api/outdoorWorkouts', (req, res) => {
   console.log(req.body)
   db.Workout.find(Type.OutdoorWorkout)
+=======
+
+app.get('/dataentry', (req,res)=>{
+  res.sendFile("public/dataentry.html")
+})
+app.post('/addExercise', (req,res)=>{
+  console.log("we're geting something",req.body)
+  db.Exercise.create(req.body).then(data=>res.json(data))
+>>>>>>> 66edfba3fcc9f1936bc9d7fc3db90d550afe008c
 })
 
 

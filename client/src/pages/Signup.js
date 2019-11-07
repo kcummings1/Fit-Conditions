@@ -37,14 +37,11 @@ class Signup extends Component {
   };
 
   render() {
-    // go to home page after signup
-    if (this.Auth.loggedIn()) {
-      return <Redirect to="/" />;
-    }
+    
     return (
       <div className="sign-up-page">
         <div className="container">
-          <h1>Signup</h1>
+        <h1>Sign Up</h1>
           <form onSubmit={this.handleFormSubmit}>
             <div className="form-group">
               <label htmlFor="username">Username:</label>

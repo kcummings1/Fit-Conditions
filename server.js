@@ -38,10 +38,7 @@ mongoose
   .then((data) => console.log("MongoDB Connected!"))//, data))
   .catch(err => console.error(err));
 
-//   db.Workout.find({}).then((database)=>console.log(database))
-//   db.Workout.findOne().lean().exec(function(err, doc) {
-//     console.log(doc);
-// });
+
 // LOGIN ROUTE
 app.post('/api/login', (req, res) => {
   auth
@@ -72,11 +69,12 @@ app.get('/api/indoorworkouts', (req, res) => {
 
 
 
-//Add routes to Outdoor Workouts here
-// app.get('/api/outdoorWorkouts', (req, res) => {
-//   console.log(req.body)
-//   db.Workout.find(Type.OutdoorWorkout)
-// });
+app.get('/api/outdoorworkouts', (req, res) => {
+  console.log("hello")
+ db.Workout.find({type: "Outdoor Workout"}).then(data => {
+   res.json(data);
+ })
+});
 
 app.get('/dataentry', (req,res)=>{
   res.sendFile("public/dataentry.html")

@@ -18,7 +18,16 @@ const WorkoutSchema = new Schema({
     },
 
     exercise: {
-        type: Array 
+        type: [String],
+        default: []
+    },
+    bilateral: {
+        type: [String],
+        default: []
+    },
+    unilateral: {
+        type: [String],
+        default: []
     }
 }, {
     collection: "Workout"

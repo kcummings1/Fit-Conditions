@@ -23,7 +23,7 @@ class Indoor extends Component {
 
     return (
       <section className="indoor-content">
-        <div>
+        <div className= "box-color">
           <div className="container">
             <div className="row text-center py-5">
 
@@ -31,14 +31,14 @@ class Indoor extends Component {
                 .filter(workout => (workout.bilateral.length > 0))
                 .map(workout => (
                   <div className="col-md-4">
-                    <h2>{workout.name}</h2>
-                    <h4>Bilateral Workouts</h4>
+                    <h4>{workout.name}</h4>
+                    <h2>Bilateral Workouts</h2>
                     <ul>
                       {workout.bilateral.map(bilat => (
                         <li>{bilat}</li>
                       ))}
                     </ul>
-                    <h4>Unilateral Workouts</h4>
+                    <h2>Unilateral Workouts</h2>
                     <ul>
                       {workout.unilateral.map(unilat => (
                         <li>{unilat}</li>
@@ -51,7 +51,7 @@ class Indoor extends Component {
                 .filter(workout => (workout.bilateral.length === 0))
                 .map(workout => (
                   <div className="col-md-12">
-                    <h2>{workout.name}</h2>
+                    <h4>{workout.name}</h4>
                     <ul>
                       {workout.exercise.map(exer => (
                         <li>{exer}</li>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import withAuth from "../components/withAuth";
-import API from "../utils/API";
-import { Link } from "react-router-dom";
+//import withAuth from "../components/withAuth";
+//import API from "../utils/API";
+//import { Link } from "react-router-dom";
 import Background from "./img/running.jpeg";
 
 const divStyle = {
@@ -41,7 +41,7 @@ class Home extends Component {
 
                     <div className="col-sm-6 hidden-xs animation animated-item-4">
                       <div className="slider-img">
-                        <img src="" className="img-responsive" />
+                      
                       </div>
                     </div>
                   </div>

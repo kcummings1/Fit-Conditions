@@ -1,5 +1,5 @@
 import React from "react";
-import weather from "./../pages/img/weatherbg.png";
+//import weather from "./../pages/img/weatherbg.png";
 
 
 

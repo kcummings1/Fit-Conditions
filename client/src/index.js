@@ -4,7 +4,7 @@ import "./index.css";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "font-awesome/css/font-awesome.min.css";
-import jquery from "jquery";
+//import jquery from "jquery";
 import "bootstrap/dist/js/bootstrap.min.js";
 
 import App from "./App";

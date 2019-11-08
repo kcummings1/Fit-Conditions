@@ -5,23 +5,23 @@
 
 li {
     list-style-type: none;
-    display: inline-block;
+    /* display: inline-block; */
     margin: 5px auto 5px auto;  
   }
   
   ul {
       text-align: center;
       margin: 0 auto;
-      display: inline-block;
+      /* display: inline-block; */
   }
   
-  .col-md-4 {
+  .col-md-12 {
       text-align: center;
       margin: 0 auto;
   
   }
   
-  h4 {
+  h2 {
       font-family: 'Bowlby One SC';
       margin: 0 auto;
       display: inline-block;  

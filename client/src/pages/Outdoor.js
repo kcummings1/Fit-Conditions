@@ -24,26 +24,31 @@ class Outdoor extends Component {
         }
         return (
             <section className="outdoor-content">
-                <div className="container">
-                    <div className="row text-center">
-                    </div>
-                    <div>
-                        {this.state.workouts
-                            .map(workouts => (
-                                <div className="col-md-12">
-                                    <h2>{workouts.name}</h2>
-                      <ul>
-                                        {workouts.exercise.map(exer =>
-                                            <li>{exer}</li>)}
-                                    </ul>
+                <div className="box-color">
 
-                                </div>
-                            )
 
-                            )
+                    <div className="container">
+                        <div className="row text-center py-5">
+                        
+                            <div>
+                                {this.state.workouts
+                                    .map(workout => (
+                                        <div className="col-sm-4">
+                                            <h2>{workout.name}</h2>
+                                            <ul>
+                                                {workout.exercise.map(exer =>
+                                                    <li>{exer}</li>)}
+                                            </ul>
+                                        </div>
 
-                        }
+                                    )
 
+                                    )
+
+                                }
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </section>

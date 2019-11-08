@@ -7,7 +7,6 @@ class Outdoor extends Component {
         workouts: []
     }
 
-
     componentDidMount() {
         API.getOutdoorWorkout()
             .then(res => {
@@ -24,7 +23,11 @@ class Outdoor extends Component {
         }
         return (
             <div>
-                {this.state.workouts[0].name}
+                {this.state.workouts.map(workouts => {
+
+                })  
+
+                }
             </div>
         )
     }

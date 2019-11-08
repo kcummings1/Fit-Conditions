@@ -30,7 +30,7 @@ class Profile extends Component {
     const city = this.state.city;
     const country = "USA";
     const api_call = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city},${country || "USA"}&appid=${API_KEY}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city},${country || "USA"}&appid=${API_KEY}&units=metric`
     );
     const data = await api_call.json();
     

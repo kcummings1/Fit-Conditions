@@ -108,7 +108,7 @@ class Profile extends Component {
               has been shown to prevent increases in obesity among children.
             </p>
 
-            <Link to="/outdoorWorkout" className="container-form-btn">
+            <Link to="/outdoor" className="container-form-btn">
               <button type="button" className="btn btn-secondary btn-lg">
                 Outdoor Page
               </button>
@@ -122,7 +122,7 @@ class Profile extends Component {
             <div className="col-md-10">
               <img src={indoor} className="img-responsive" width="100%" />
               <p>text for indoor workout</p>
-              <Link to="/indoorWorkout" className="container-form-btn">
+              <Link to="/indoor" className="container-form-btn">
                 <button type="button" className="btn btn-secondary btn-lg">
                   Indoor Page
                 </button>

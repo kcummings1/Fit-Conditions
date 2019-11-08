@@ -268,14 +268,33 @@ const workOutSeed = [
     {
         "type": "Outdoor Workout",
         "name": "Trail Hike",
+        "exercise": [
+                    "2 Miles",
+                    "3 Miles",
+                    "4 Miles",
+                    "5 Miles",
+                    "6 Miles"
+                    ]
     },
     {
         "type": "Outdoor Workout",
         "name": "Run",
+        "exercise": [
+                 "2 Miles",
+                 "3 Miles",
+                 "4 Miles"
+        ]
     },
     {
         "type": "Outdoor Workout",
         "name": "Swim",
+        "exercise": [
+            "400 Meters",
+            "800 Meters",
+            "1200 Meters",
+            "1600 Meters",
+            "2000 Meters"
+        ] 
     }
 ];
 

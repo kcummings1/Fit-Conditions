@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import API from "../utils/API"
+import "./Outdoor.css"
 
 
 class Outdoor extends Component {
     state = {
         workouts: []
     }
-
 
     componentDidMount() {
         API.getOutdoorWorkout()
@@ -23,9 +23,30 @@ class Outdoor extends Component {
             return <div>Loading...</div>
         }
         return (
-            <div>
-                {this.state.workouts[0].name}
-            </div>
+            <section className="outdoor-content">
+                <div className="container">
+                    <div className="row text-center">
+                    </div>
+                    <div>
+                        {this.state.workouts
+                            .map(workouts => (
+                                <div className="col-md-12">
+                                    <h2>{workouts.name}</h2>
+                      <ul>
+                                        {workouts.exercise.map(exer =>
+                                            <li>{exer}</li>)}
+                                    </ul>
+
+                                </div>
+                            )
+
+                            )
+
+                        }
+
+                    </div>
+                </div>
+            </section>
         )
     }
 

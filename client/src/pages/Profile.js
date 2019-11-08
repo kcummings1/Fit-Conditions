@@ -1,20 +1,17 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import axios from "axios";
+//import ReactDOM from "react-dom";
+//import axios from "axios";
 
-import withAuth from "./../components/withAuth";
+//import withAuth from "./../components/withAuth";
 import API from "./../utils/API";
 import { Link } from "react-router-dom";
-import weather from "./img/weather.jpeg";
+//import weather from "./img/weather.jpeg";
 import outdoor from "./img/outdoor.jpeg";
 import indoor from "./img/indoor.jpeg";
 import Weather from "./../components/Weather";
-import Form from "./../components/Form";
+//import Form from "./../components/Form";
 
-const divStyle = {
-  color: "white",
-  backgroundImage: "url(" + weather + ")"
-};
+
 
 const API_KEY = "78e5a71d348673c855d828aecf39b08b";
 class Profile extends Component {
@@ -36,10 +33,12 @@ class Profile extends Component {
       `http://api.openweathermap.org/data/2.5/weather?q=${city},${country || "USA"}&appid=${API_KEY}&units=metric`
     );
     const data = await api_call.json();
+    
     if (city && country) {
+     console.log(data) 
       this.setState({
         temperature: data.main.temp,
-        city: data.name,
+        city:  data.name,
         country: data.sys.country,
         humidity: data.main.humidity,
         description: data.weather[0].description,
@@ -59,8 +58,9 @@ class Profile extends Component {
 
   componentDidMount() {
     API.getUser(this.props.user.id).then(res => {
+      console.log("res"+ res.data.city )
       this.setState({
-        city: res.data.city
+         city: res.data.city
       }, () => {
         this.getWeather()
       })
@@ -89,20 +89,7 @@ class Profile extends Component {
             </section>
           </div>
           <br />
-          {/* 
-          <div className="col-md-10">
-            <div className="weather" width="100%">
-              <img src={weather} className="img-responsive " width="100%" />
-             <iframe
-                src={weather}
-                width="100%"
-                height={380}
-                frameBorder={0}
-                style={{ border: 0 }}
-                allowFullScreen
-              /> 
-            </div>
-          </div> */}
+        
         </div>
 
         <div className="container">

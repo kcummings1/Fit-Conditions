@@ -33,13 +33,15 @@ class Outdoor extends Component {
                             <div>
                                 {this.state.workouts
                                     .map(workout => (
-                                        <div className="col-sm-4">
+                                        <div className="col-md-4 font-family inline-block">
                                             <h2>{workout.name}</h2>
+                                            <div className="row text-center">
                                             <ul>
                                                 {workout.exercise.map(exer =>
                                                     <li>{exer}</li>)}
                                             </ul>
-                                        </div>
+                                            </div>
+                                 </div>
 
                                     )
 

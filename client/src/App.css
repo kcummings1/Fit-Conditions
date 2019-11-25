@@ -67,7 +67,7 @@ a:hover {
 
 .btn-primary {
   padding: 8px 20px;
-  background: #1bbd36;
+  background: #0C641E;
   color: #fff;
   border-radius: 4px;
   border: none;
@@ -94,13 +94,13 @@ a:hover {
 }
 
 #breadcrumb {
-  background-color: #1bbd36;
+  background-color: #0C641E;
   margin-top: -20px;
 }
 
 .breadcrumb {
   list-style: none;
-  background-color: #1bbd36;
+  background-color: #0C641E;
   border-radius: 0px;
   padding: 3px 10px;
 }
@@ -129,7 +129,7 @@ a:hover {
   font-weight: 900;
 }
 .navbar-brand h1 span {
-  color: #1bbd36;
+  color: #0C641E;
 }
 
 .collapse.navbar-collapse {
@@ -157,7 +157,7 @@ a:hover {
 }
 
 .navbar-nav > li > a:hover {
-  color: #1bbd36 !important;
+  color: #0C641E !important;
   border-color: #fff #fff #fff !important;
   border-radius: 0 !important;
   background-color: #fff !important;
@@ -167,7 +167,7 @@ a:hover {
   -o-transition: all 0.3s ease-in-out !important;
 }
 .navbar-nav > li > a.active {
-  color: #1bbd36 !important;
+  color: #0C641E !important;
   border-radius: 0 !important;
   transition: all 0.3s ease-in-out !important;
   -moz-transition: all 0.3s ease-in-out !important;
@@ -243,7 +243,7 @@ a:hover {
 }
 
 #main-slider .carousel h2 span {
-  color: #1bbd36;
+  color: #0C641E;
 }
 
 #main-slider .carousel h2 span spani {
@@ -257,7 +257,7 @@ a:hover {
 
 #main-slider .carousel .btn-slide {
   padding: 8px 20px;
-  background: #1bbd36;
+  background: #0C641E;
   color: #fff;
   border-radius: 4px;
   margin-top: 25px;
@@ -359,7 +359,7 @@ a:hover {
   margin-bottom: 30px;
   color: #fff;
   padding: 50px;
-  background: #1bbd36;
+  background: #0C641E;
   border-radius: 50%;
 }
 
@@ -368,12 +368,12 @@ a:hover {
   margin-bottom: 20px;
   text-transform: uppercase;
   font-size: 18px;
-  color: #1bbd36;
+  color: #0C641E;
 }
 
 .hi-icon-effect i.fa:hover {
   background: #fff;
-  color: #1bbd36;
+  color: #0C641E;
   -webkit-transition: color 300ms, background-color 300ms;
   -moz-transition: color 300ms, background-color 300ms;
   -o-transition: color 300ms, background-color 300ms;

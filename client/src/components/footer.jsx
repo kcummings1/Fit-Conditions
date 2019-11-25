@@ -28,7 +28,7 @@ class Footer extends Component {
         </div>
   
         <div className="pull-right">
-          <a href="#home" className="scrollup"><i className="fa fa-angle-up fa-3x"></i></a>
+          <a href="#home" className="scrollup" aria-label="scroll up"><i className="fa fa-angle-up fa-3x"></i></a>
         </div>
       </div>
       </footer>

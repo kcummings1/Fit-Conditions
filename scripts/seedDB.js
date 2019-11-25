@@ -172,10 +172,10 @@ const workOutSeed = [
             "Hill Sprints",
             "Agility Movements/Sprints ( Mulit Directional )",
             "Tire Drag",
-            "Farmer Carry ( Whatevery Equipment available )",
+            "Farmer Carry ( Whatever Equipment available )",
             "Tire Flips",
-            "Heavy Object Pick Up ( Advanced )",
-            "Hurdle Drills ( Forward/Backward and single/Double leg hop )"
+            "Heavy Object Pick Up ( Advanced )"
+            
         ]
     },
     {

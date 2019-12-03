@@ -42,7 +42,7 @@ ReactDOM.render(
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/profile" component={withAuth(Profile)} />
-      <Route exact path="/home" component={Home} />
+      <Route exact path="/" component={Home} />
       <Route exact path="/indoor" component={Indoor} />
       <Route exact path="/outdoor" component={Outdoor} />
       <Footer />

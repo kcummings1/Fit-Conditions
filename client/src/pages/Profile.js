@@ -170,7 +170,7 @@ class Profile extends Component {
           <p>Email: {this.state.email}</p> */}
           <Link to="/">
             <button className="btn btn-primary"> Go home </button>
-          </Link>
+          </Link> 
         </div>
         <br />
       </section>

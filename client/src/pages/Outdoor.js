@@ -8,6 +8,7 @@ class Outdoor extends Component {
         workouts: []
     }
 
+
     componentDidMount() {
         API.getOutdoorWorkout()
             .then(res => {

@@ -175,7 +175,7 @@ a:hover {
   -o-transition: all 0.3s ease-in-out !important;
 }
 
-@media (max-width: 980px) {
+/* @media (max-width: 980px) {
   .navbar-brand {
     padding-top: 6px;
   }
@@ -197,10 +197,10 @@ a:hover {
     }
   }
   
-  @media screen and (max-width: 640px) {
+  @media (max-width: 640px) {
     #masthead {
       position: static;
-    }
+    } */
 
   .collapse {
     position: absolute;
@@ -218,7 +218,7 @@ a:hover {
   .navbar-nav > li > a:hover {
     border-color: #f3f3f3;
   }
-}
+
 
 .no-margin {
   margin: 0 !important;

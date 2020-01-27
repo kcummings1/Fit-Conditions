@@ -31,3 +31,9 @@ Credits
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 This project had three contributors. Here are their Github Links: 
 https://github.com/kcummings1 =||= https://github.com/elimaloy =||= https://github.com/patrickstahley3
+
+-------------------------------------------------------------------------------
+
+Many thanks for taking the time and consideration out of your day to look at my github. 
+
+* https://www.linkedin.com/in/kobi-cummings/
